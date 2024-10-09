@@ -1,0 +1,30 @@
+.flex-3 {
+    flex: 3;
+}
+.flex-4 {
+    flex: 4;
+}
+.flex-5 {
+    flex: 5;
+}
+.flex-6 {
+    flex: 6;
+}
+.flex-7 {
+    flex: 7;
+}
+.center {
+    height: 630px;
+    margin: 15px;
+}
+.hbox {
+    display: flex;
+    height: 100%;
+    gap: 15px;
+}
+.vbox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 15px;
+}

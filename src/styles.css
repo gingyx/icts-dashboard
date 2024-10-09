@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Roboto;
+    src: url(assets/font/Roboto-Light.ttf);
+    font-weight: 300;
+  }
+  
+  @font-face {
+    font-family: Roboto;
+    src: url(assets/font/Roboto-Regular.ttf);
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: Roboto;
+    src: url(assets/font/Roboto-Medium.ttf);
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: Roboto;
+    src: url(assets/font/Roboto-Bold.ttf);
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: Roboto;
+    src: url(assets/font/Roboto-Black.ttf);
+    font-weight: 900;
+  }
+  
+  :root {
+    --my-blue: #4b9fc8;
+    --my-lgray: #e4edfb;
+    --my-dgray: #afc3e4;
+    --my-navy: #0a1c3b;
+  }
+
+  html {
+    font-family: Roboto, sans-serif !important;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  body {
+    background-color: #a1b2d1 !important;
+    font-weight: 700 !important;
+    margin: 0;
+  }
+  
+  .panel-light {
+    padding: 10px 10px;
+    background-color: var(--my-lgray);
+    border-radius: 10px;
+  }
+
+  .panel-dark {
+    padding: 10px 10px;
+    background-color: var(--my-dgray);
+    border-radius: 10px;
+  }
+
+  .panel-title-light {
+    color: var(--my-dgray);
+  }
+
+  .panel-title-dark {
+    color: var(--my-lgray);
+  }
+
+  .main-text {
+    color: var(--my-navy)
+  }
+  
+  .centered {
+    display: flex;
+    justify-content: center;
+  }

@@ -1,0 +1,38 @@
+<div class="panel-light">
+    <div class="panel-title-light">Documenten filteren</div>
+    <div class="grid">
+        <div class="main-text">Boekjaar</div>
+        <select matNativeControl [(ngModel)]="param.year" (change)="onParamChanged()">
+            @for (option of years; track option) {
+            <option [value]="option.value">{{option.viewValue}}</option>
+            }
+        </select>
+
+        <div class="main-text">Bedrijfsnummer</div>
+        <select matNativeControl [(ngModel)]="param.company" (change)="onParamChanged()">
+        @for (option of companyNumbers; track option) {
+            <option [value]="option.value">{{option.viewValue}}</option>
+        }
+        </select>
+        
+        <div class="main-text">Documentnummer</div>
+        <div class="align-right">
+            <select matNativeControl [(ngModel)]="param.docNbMin" (change)="onParamChanged()">
+            @for (option of docNumbers; track option) {
+                <option [value]="option.value">{{option.viewValue}}</option>
+            }
+            </select>
+            <div class="main-text">—</div>
+            <select matNativeControl [(ngModel)]="param.docNbMax" (change)="onParamChanged()">
+            @for (option of docNumbers; track option) {
+                <option [value]="option.value">{{option.viewValue}}</option>
+            }
+            </select>
+        </div>
+
+        <div class="main-text">Toon alle details</div>
+        <div class="align-right">
+            <input type="checkbox" [(ngModel)]="param.showDetails" (change)="onParamChanged()">
+        </div>
+    </div>
+</div>

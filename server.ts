@@ -4,6 +4,7 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
+import mysql from 'mysql';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -16,6 +17,18 @@ export function app(): express.Express {
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
+
+  const connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : '',
+    database : 'doc_records'
+  });
+  
+  connection.connect((err) => {
+    if (err) throw err;
+    console.log('Connected to MySQL!');
+  });
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
@@ -39,6 +52,17 @@ export function app(): express.Express {
       })
       .then((html) => res.send(html))
       .catch((err) => next(err));
+  });
+
+  server.get('/api/doc-records', (req, res) => {
+    console.log("Test")
+    connection.query('SELECT * FROM bkpf', (err, results) => {
+      if (err) {
+        res.status(500).send('Database query failed');
+      } else {
+        res.json(results);
+      }
+    });
   });
 
   return server;

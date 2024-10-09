@@ -1,0 +1,8 @@
+.title {
+    font-size: 30px;
+    color: white;
+    background-color: var(--my-blue);
+    height: 50px;
+    align-content: center;
+    padding-left: 10px;
+}

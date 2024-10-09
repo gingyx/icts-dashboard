@@ -1,0 +1,31 @@
+.grid {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    justify-items: left right;
+    grid-auto-rows: 40px;
+    grid-row-gap: 0px;
+}
+.main-text {
+    justify-content: left;
+}
+/* .option-button {
+    flood-color: var(--my-dgray);
+} */
+.panel-light {
+    flex: 1;
+}
+select {
+    font-family: inherit;
+    font-size: inherit;
+    justify-self: right;
+    width: 130px;
+  }
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+}
+.align-right {
+    display: flex;
+    justify-content: end;
+}

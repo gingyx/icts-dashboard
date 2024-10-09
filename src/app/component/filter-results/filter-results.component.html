@@ -1,0 +1,27 @@
+<div class="panel-dark">
+    <div class="panel-title-dark">{{documents.length}} {{documents.length == 1 ? "resultaat" : "resultaten"}} gevonden</div>
+    <table>
+        <tbody>
+        <tr>
+            <th>Bedrijfsnr</th>
+            <th>Boekjaar</th>
+            <th>Docnr</th>
+            <th>Soort</th>
+            <th>DocDat</th>
+            <th>Boekregel</th>
+            <th>Sleutel</th>
+            <th>VereffeningDat</th>
+        </tr>
+        <tr *ngFor="let doc of documents">
+            <td>{{doc.bedrijfsNr}}</td>
+            <td>{{doc.boekjaar}}</td>
+            <td>{{doc.docNr}}</td>
+            <td>{{doc.docSoort}}</td>
+            <td>{{doc.getDocDatum()}}</td>
+            <td>{{doc.boekRegel}}</td>
+            <td>{{doc.boekSleutel}}</td>
+            <td>{{doc.getVerefDatum()}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
